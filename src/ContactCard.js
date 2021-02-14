@@ -1,6 +1,8 @@
 import React, {useState, useEffect} from 'react';
 import {Button, Container, Row, Col, Modal, Form} from 'react-bootstrap';
 import Contact from './Contact';
+import Header from './Header';
+import FlashMessage from 'react-flash-message'
 
 const Passwords = [
   {
@@ -38,6 +40,8 @@ const Passwords = [
 const ContactsScreen = () => {
   const [pignusGenModal, setPignusGenModal] = useState(false);
   const [newKey, setNewKey] = useState('');
+  const [searchedPasswords, setSearchedPasswords] = useState(Passwords)
+  const [searchTerm, setSearchTerm] = useState('')
 
 
   function makeid(length) {
@@ -55,8 +59,15 @@ const ContactsScreen = () => {
     setNewKey(makeid(14))
   }
 
+  useEffect(() => {
+    console.log("SEARCH", searchTerm)
+    const result = Passwords.filter(key => key.title.toLowerCase().includes(searchTerm.toLowerCase()))
+    setSearchedPasswords(result)
+  }, [searchTerm])
+
   return (
     <>
+      <Header onSearch={setSearchTerm} />
       <Modal show={pignusGenModal} onHide={() => setPignusGenModal(false)} >
         <Modal.Dialog>
           <Modal.Header closeButton>
@@ -89,7 +100,7 @@ const ContactsScreen = () => {
         <Row>
           <Col>
             {
-              Passwords.map(row => <Contact name={row.title} url={row.url} password={row.password} />)
+              searchedPasswords.map(row => <Contact name={row.title} url={row.url} password={row.password} />)
             }
           </Col>
         </Row>

@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Arima+Madurai:wght@400;700;900&family=Comfortaa:wght@400;700&display=swap');
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -50,4 +52,37 @@ code {
   padding: 10px;
   border-radius: 10px;
   background-color: #eee;
+}
+
+.appHeading {
+  font-family: 'Arima Madurai', curs;
+  font-weight: 900;
+  color: #FFF;
+  letter-spacing: 5px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+.signin-container {
+  padding: 20px;
+  background-color: transparent;
+  border: 2px solid #CCC;
+  border-radius: 10px;
+  min-width: 280px;
+  max-width: 35vw;
+}
+
+.signIn-input {
+  border: none;
+  outline: none;
+  border-bottom: 2px solid #CCC;
+  background-color: transparent;
+  color: #ccc;
+  padding: 5px;
+  margin: 15px;
+  transition: all 0.5s ease-in-out;
+}
+
+.signIn-input:focus {
+  border-bottom: 2px solid #d5007d;
 }
