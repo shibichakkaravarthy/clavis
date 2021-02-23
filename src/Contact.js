@@ -57,7 +57,7 @@ const Contact = ({name, url, password}) => {
           <div className="flex1" >{showPassword ? password : "****************"}</div>
           <Row className="flex1 space-around" >
             <Button onClick={() => !showPassword ? setAskPassword(true) : alert('Password Copied')} variant="success">{showPassword ? <IoCopyOutline /> : <GrFormView />}</Button>
-            <Button variant="info" onClick={() => alert('Sanda punda la anguttu poi podu da sunni')} ><MdModeEdit /></Button>
+            <Button variant="info" onClick={() => alert('Feature not yet available')} ><MdModeEdit /></Button>
             <Button variant="danger"><MdDelete /></Button>
           </Row>
         </Row>

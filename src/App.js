@@ -6,6 +6,14 @@ import SignIn from './SignIn';
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
+
+  useEffect(() => {
+    if(isAuthenticated === true) {
+      setTimeout(() => {
+        setIsAuthenticated(false)
+      }, 300000)
+    }
+  })
   return (
     <div className="App">
       {

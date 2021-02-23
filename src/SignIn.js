@@ -11,7 +11,7 @@ const SignIn = ({auth}) => {
       auth(true)
     }
     else {
-      alert('password eh correct ah podu da mutta payale');
+      alert('Icorrect Password!!! Please try again');
     }
   }
   return (
